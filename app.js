@@ -5,11 +5,7 @@ function getResult(e) {
 
   const request = new XMLHttpRequest();
 
-  request.open(
-    "GET",
-    `https://api.publicapis.org/entries?description=${searchQuery}`,
-    true
-  );
+  request.open("GET",`https://api.publicapis.org/entries?description=${searchQuery}`,true);
   request.onload = function() {
     if (this.status === 200) {
       const response = JSON.parse(this.responseText);
@@ -18,22 +14,25 @@ function getResult(e) {
       if (response.count > 0) {
         response.entries.forEach(api => {
             output += 
-            `<li><a href="${api.Link}">${api.API}</a>
-                <p>${api.Description}</p>
-                <p>Auth Type: ${api.Auth}</p>
-                <p>Supports HTTPS: ${api.HTTPS}</p>
-                <p>Supports CORS: ${api.Cors}</p>
-            </li>`             
+                `
+                <article class="search-result grow">
+                <h2>${api.API}</h2>
+                <p>${api.Description}</p
+                <ul>
+                <li>Auth: ${api.Auth}</li>
+                <li>HTTPS: ${api.HTTPS}</li>
+                <li>CORS: ${api.Cors}</li>
+                </ul>
+                <button onclick="location.href='${api.Link}'" class='fade'>Go to API</button>
+                </article>
+                `             
         });
       } else {
           output += '<h3>No Results</h3>';
       }
-
-      document.querySelector('.search-result').innerHTML = output;
+      document.querySelector('.result-container').innerHTML = output;
     }
   }
-
   request.send();
-
   e.preventDefault();
 }
