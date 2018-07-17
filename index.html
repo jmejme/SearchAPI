@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SearchAPI</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Search-API</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>SearchAPI</h1>
-        <form>
-            <div>
-                <label for="text">Search through available public API's</label>
-                <input id="search-query">
-            </div>
-            <div>
-                <button type="submit" class="api-search">Go</button>
-            </div>
-        </form>
-        <ul class="search-result"></ul>
-    </div>
+    <header>
+        <section class="search-section">
+            <h1 class="title">SearchAPI</h1>
+            <h4>Search for available public API's</h4>
+            <form>
+                <div class="search-bar-container">
+                    <label for="search-query"></label>
+                    <input id="search-query" class="search-bar" placeholder="Search...">
+                    <button type="submit" class="api-search">
+                        <i class="fas fa-search fa-3x"></i>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </header>
+    <main>
+        <div class="result-container">
 
+        </div>
+    </main>
     <script src="app.js"></script>
 </body>
 
