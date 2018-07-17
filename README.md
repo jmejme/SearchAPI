@@ -8,7 +8,7 @@ Web app to search available public API's
 
 - [x] Connect to API.
 - [x] Show results in the DOM.
-- [ ] Styling.
+- [x] Styling.
 - [ ] Return error when no search input is used.
 
 #### Development List
