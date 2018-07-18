@@ -9,7 +9,7 @@ function getResult(e) {
 
   request.open(
     "GET",
-    "https://api.publicapis.org/entries?description=" + searchQuery,
+    "https://api.publicapis.org/entries?title=" + searchQuery,
     true
   );
   request.onload = function() {
